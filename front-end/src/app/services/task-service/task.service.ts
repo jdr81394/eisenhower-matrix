@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
 import { Task } from '../../classes/task/task';
 
@@ -19,7 +19,7 @@ export class TaskService {
     const params = new HttpParams()
     .set('action', 'getUndefinedTasks');
 
-    return this.http.get<Task[]>('www.localhost:3000', {params: params});
+    return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
   }
 
 }
