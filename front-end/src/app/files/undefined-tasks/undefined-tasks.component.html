@@ -1,30 +1,29 @@
-<div class="task-container">
-  <h2>To do</h2>
+<div cdkDropListGroup>
+  <div class="task-container">
+    <h2>To do</h2>
 
-  <div
-    cdkDropList
-    #todoList="cdkDropList"
-    [cdkDropListData]="todo"
-    [cdkDropListConnectedTo]="[doneList]"
-    class="task-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="task-box" *ngFor="let item of todo" cdkDrag>{{item.id}}</div>
+    <div
+      cdkDropList
+      [cdkDropListData]="todo"
+      class="task-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="task-box" *ngFor="let item of todo" cdkDrag>
+        {{item.name}}
+      </div>
+    </div>
   </div>
-</div>
 
-<div class="task-container">
-  <h2>Done</h2>
+  <div class="task-container">
+    <h2>two</h2>
 
-  <div
-    cdkDropList
-    #doneList="cdkDropList"
-    [cdkDropListData]="done"
-    [cdkDropListConnectedTo]="[todoList]"
-    class="task-list"
-    (cdkDropListDropped)="drop($event)">
-    <div class="task-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    <div
+      cdkDropList
+      [cdkDropListData]="done"
+      class="task-list"
+      (cdkDropListDropped)="drop($event)">
+      <div class="task-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+    </div>
   </div>
-</div>
 
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="#">Navbar</a>

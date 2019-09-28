@@ -14,28 +14,13 @@ import { TaskService } from '../../services/task-service/task.service';
 })
 export class UndefinedTasksComponent implements OnInit {
 
-  // todo: Task[];
-  todo: any[];
-  done: any[];
+  todo: Task[];
+  done: Task[];
   constructor(private taskService: TaskService) { 
-    // this.todo = [
-    //   'Get to work',
-    //   'Pick up groceries',
-    //   'Go home',
-    //   'Fall asleep'
-    // ];
-  
-    this.done = [
-      'Get up',
-      'Brush teeth',
-      'Take a shower',
-      'Check e-mail',
-      'Walk dog'
-    ];
   }
 
   ngOnInit() {
-    this.taskService.getUndefinedTasks().subscribe( (res: Task[]) => this.todo = res );
+    this.taskService.getUndefinedTasks().subscribe( (res: Task[]) => this.todo = res);
   }
 
   drop(event: CdkDragDrop<string[]>) {
