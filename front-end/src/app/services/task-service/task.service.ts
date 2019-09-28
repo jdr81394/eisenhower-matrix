@@ -15,7 +15,7 @@ export class TaskService {
     
    }
 
-  getUndefinedTasks(): Observable<Task[]> {
+  getUndefinedTasks() {
     const params = new HttpParams()
     .set('action', 'getUndefinedTasks');
 

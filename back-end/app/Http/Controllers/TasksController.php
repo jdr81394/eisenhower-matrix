@@ -39,7 +39,7 @@ class TasksController extends Controller
 
         Log::info(json_encode($result));
 
-        return response()->json($result);
+        return response()->json($result, 200);
     } catch (Exception $e) {
         Log::info("This is the error:  $e");
         echo $e->getLine();

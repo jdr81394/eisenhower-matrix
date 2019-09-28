@@ -16,6 +16,8 @@ class CreateTaskTable extends Migration
         if(!Schema::connection('mysql')->hasTable('tasks')) {
             Schema::connection('mysql')->create('tasks', function(Blueprint $table) {
                 $table->increments('id');
+                $table->string('name');
+                $table->string('description');
                 $table->tinyInteger('importance')->unsigned()->nullable();
                 $table->tinyInteger('urgency')->unsigned()->nullable();
                 $table->enum('time', ['Quick', 'Long', 'Very Long']);
