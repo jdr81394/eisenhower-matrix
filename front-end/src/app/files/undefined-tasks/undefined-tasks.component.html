@@ -1,29 +1,70 @@
-<div cdkDropListGroup>
-  <div class="task-container">
-    <h2>To do</h2>
+<div class = 'd-flex' cdkDropListGroup>
+  <div *ngIf = 'undefinedTasks' class="task-container">
+    <h2>Undefined Tasks</h2>
 
     <div
       cdkDropList
-      [cdkDropListData]="todo"
+      [cdkDropListData]="undefinedTasks"
       class="task-list"
       (cdkDropListDropped)="drop($event)">
-      <div class="task-box" *ngFor="let item of todo" cdkDrag>
+      <div class="task-box" *ngFor="let item of undefinedTasks" cdkDrag>
         {{item.name}}
       </div>
     </div>
   </div>
 
-  <div class="task-container">
-    <h2>two</h2>
+  <div class = 'matrix'>
+    <div *ngIf = 'toDoTasks' class="task-container">
+      <h2>To Do Tasks</h2>
 
-    <div
-      cdkDropList
-      [cdkDropListData]="done"
-      class="task-list"
-      (cdkDropListDropped)="drop($event)">
-      <div class="task-box" *ngFor="let item of done" cdkDrag>{{item}}</div>
+      <div
+        cdkDropList
+        [cdkDropListData]="toDoTasks"
+        class="task-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="task-box" *ngFor="let item of toDoTasks" cdkDrag>{{item.name}}</div>
+      </div>
     </div>
+
+    <div *ngIf = 'toDecideTasks' class="task-container">
+      <h2>To Decide Tasks</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="toDecideTasks"
+        class="task-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="task-box" *ngFor="let item of toDecideTasks" cdkDrag>{{item.name}}</div>
+      </div>
+    </div>
+
+    <div *ngIf = 'toDelegateTasks' class="task-container">
+      <h2>To Delegate Tasks</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="toDelegateTasks"
+        class="task-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="task-box" *ngFor="let item of toDelegateTasks" cdkDrag>{{item.name}}</div>
+      </div>
+    </div>
+
+    <div *ngIf = 'toDeleteTasks' class="task-container">
+      <h2>To Deletegate Tasks</h2>
+
+      <div
+        cdkDropList
+        [cdkDropListData]="toDeleteTasks"
+        class="task-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="task-box" *ngFor="let item of toDeleteTasks" cdkDrag>{{item.name}}</div>
+      </div>
+    </div>
+  
   </div>
+
+</div>
 
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" routerLink="#">Navbar</a>

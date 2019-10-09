@@ -22,4 +22,11 @@ export class TaskService {
     return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
   }
 
+  getToDoTasks() {
+    const params = new HttpParams()
+    .set('action', 'getToDoTasks');
+
+    return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
+  }
+
 }
