@@ -18,9 +18,10 @@ class CreateTaskTable extends Migration
                 $table->increments('id');
                 $table->string('name');
                 $table->string('description');
-                $table->tinyInteger('importance')->unsigned()->nullable();
-                $table->tinyInteger('urgency')->unsigned()->nullable();
+                $table->boolean('importance')->nullable();
+                $table->boolean('urgency')->nullable();
                 $table->enum('time', ['Quick', 'Long', 'Very Long']);
+                $table->boolean('completed');
                 $table->timestamps();
             });
         } 
