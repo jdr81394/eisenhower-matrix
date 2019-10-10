@@ -29,4 +29,28 @@ export class TaskService {
     return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
   }
 
+  getToDecideTasks() {
+    const params = new HttpParams()
+    .set('action', 'getToDecideTasks');
+
+    return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
+  }
+
+  getToDelegateTasks() {
+    const params = new HttpParams()
+    .set('action', 'getToDelegateTasks');
+
+    return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
+  
+  }
+
+  getToDeleteTasks() {
+    const params = new HttpParams()
+    .set('action', 'getToDeleteTasks');
+
+    return this.http.get<Task[]>('http://www.localhost:3000/main/tasks', {params: params});
+  
+  }
+
+
 }
